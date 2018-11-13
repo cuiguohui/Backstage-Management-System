@@ -1,0 +1,34 @@
+/**
+ * Created by 崔国辉 on 2018/11/13 0013 11:53
+ * Develop by 崔国辉 on 2018/11/13 0013 11:53
+ */
+{
+  "env": {
+  "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+},
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "parserOptions": {
+  "sourceType": "module",
+    "ecmaFeatures": {
+    "experimentalObjectRestSpread": true,
+      "jsx": true,
+      "modules": true
+  }
+},
+  "rules": {
+  "indent": 0,
+    "linebreak-style": ["error", "unix"],
+    "react/prop-types": ["ignore"],
+    "react/display-name": ["ignore"],
+    "react/jsx-filename-extension": 0,
+    "arrow-parens": 0,
+    "import/no-unresolved": 0,
+    "import/no-extraneous-dependencies": 0,
+    "no-plusplus": 0,
+    "no-param-reassign": 0
+}
+}
