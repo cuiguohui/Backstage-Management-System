@@ -3,15 +3,17 @@
  * Develop by 崔国辉 on 2018/11/13 0013 15:48
  */
 import React from 'react';
-import { Layout, Icon, Menu } from 'antd';
-
-import Styles from './homeHeader.module.css';
+import {
+ Layout, Icon, Menu, Badge,
+} from 'antd';
+import * as Images from '../../../images/index';
+import Styles from './mainHeader.module.css';
 
 const { Header } = Layout;
 const { SubMenu } = Menu;
 const MenuItemGroup = Menu.ItemGroup;
 
-class HomeHeader extends React.Component {
+class MainHeader extends React.Component {
   handleNavToggleClick = () => {
     const { collapsed, onNavToggle } = this.props;
     onNavToggle(collapsed);
@@ -34,23 +36,23 @@ class HomeHeader extends React.Component {
             mode="horizontal"
           >
             <Menu.Item key="mail">
-              <Icon type="mail" />
-              <span>信息</span>
+              <Badge count={99} overflowCount={100}>
+                <Icon type="mail" />
+              </Badge>
             </Menu.Item>
             <SubMenu title={(
               <span className="submenu-title-wrapper">
-                <Icon type="setting" />
-                <span>设置</span>
+                <img src={Images.Avatar} alt="" />
               </span>
             )}
             >
-              <MenuItemGroup title="Item 1">
-                <Menu.Item key="setting:1">Option 1</Menu.Item>
-                <Menu.Item key="setting:2">Option 2</Menu.Item>
+              <MenuItemGroup title="个人中心">
+                <Menu.Item key="setting:1">个人信息</Menu.Item>
+                <Menu.Item key="setting:2">退出登录</Menu.Item>
               </MenuItemGroup>
-              <MenuItemGroup title="Item 2">
-                <Menu.Item key="setting:3">Option 3</Menu.Item>
-                <Menu.Item key="setting:4">Option 4</Menu.Item>
+              <MenuItemGroup title="设置">
+                <Menu.Item key="setting:3">个人设置</Menu.Item>
+                <Menu.Item key="setting:4">系统设置</Menu.Item>
               </MenuItemGroup>
             </SubMenu>
           </Menu>
@@ -60,4 +62,4 @@ class HomeHeader extends React.Component {
   }
 }
 
-export default HomeHeader;
+export default MainHeader;

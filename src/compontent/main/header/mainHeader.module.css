@@ -26,3 +26,9 @@
 .header-list ul li:hover{
   border-bottom: 2px solid #282c34;
 }
+
+.header-list img{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import HomePage from '../home/Home';
+import MainPage from '../main/Main';
 
 class App extends Component {
   constructor(props) {
@@ -16,8 +16,7 @@ class App extends Component {
         <Switch>
           <Route
             path="/"
-            component={HomePage}
-            exact
+            component={MainPage}
           />
         </Switch>
       </BrowserRouter>
