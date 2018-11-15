@@ -34,3 +34,17 @@
 #home-side{
   height:calc(100% - 80px);
 }
+
+.ant-menu-submenu-inline i.title{
+  font-style: normal;
+  -webkit-transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  opacity: 1;
+}
+.ant-menu-submenu-vertical i.title{
+  font-style: normal;
+  max-width: 0;
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}

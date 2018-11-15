@@ -8,7 +8,8 @@ import { Switch, Route } from 'react-router-dom';
 import MainHeader from '../header/MainHeader';
 import HomePage from '../../home/Home';
 import MainSider from '../side/MainSider';
-import Commonly from '../../commonly/Commonly';
+import RichText from '../../commonly/rich-text/RichText';
+import Drag from '../../commonly/drag/Drag';
 
 import './main.kepp.css';
 
@@ -26,19 +27,16 @@ class MainLayout extends React.Component {
     onNavToggle(collapsed);
   };
 
-  handleChangeThemeClick = () => {
-    const { onChangeTheme, theme } = this.props;
-    if (theme === 'dark') {
-      onChangeTheme('light');
-    } else {
-      onChangeTheme('dark');
-    }
+  handleChangeTheme = (value) => {
+    const { onChangeTheme } = this.props;
+    onChangeTheme(value);
   };
 
   renderRouter = () => (
     <Switch>
       <Route path="/" render={() => (<HomePage />)} exact />
-      <Route path="/commonly" render={() => (<Commonly />)} exact />
+      <Route path="/rich-text" render={() => (<RichText />)} exact />
+      <Route path="/drag" render={() => (<Drag />)} exact />
     </Switch>
   );
 
@@ -49,6 +47,7 @@ class MainLayout extends React.Component {
         <MainSider
           isCollapsed={isCollapsed}
           theme={theme}
+          onChangeTheme={this.handleChangeTheme}
         />
         <Layout>
           <MainHeader collapsed={isCollapsed} onNavToggle={this.handleNavToggle} />

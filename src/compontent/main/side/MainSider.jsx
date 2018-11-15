@@ -10,6 +10,15 @@ import Styles from './main.module.css';
 const { SubMenu } = Menu;
 
 class MainSider extends React.Component {
+  handleChangeThemeClick = () => {
+    const { onChangeTheme, theme } = this.props;
+    if (theme === 'dark') {
+      onChangeTheme('light');
+    } else {
+      onChangeTheme('dark');
+    }
+  };
+
   render() {
     const { isCollapsed, theme } = this.props;
     return (
@@ -28,51 +37,59 @@ class MainSider extends React.Component {
           inlineCollapsed={isCollapsed}
           id="home-side"
         >
-          <Menu.Item key="1">
+          <Menu.Item key="home">
             <Link to="/">
               <Icon type="pie-chart" />
               <span>首页</span>
             </Link>
           </Menu.Item>
-          <Menu.Item key="2">
-            <Link to="/commonly">
-              <Icon type="desktop" />
-              <span>常用功能</span>
-            </Link>
-          </Menu.Item>
-          <Menu.Item key="3">
-            <Icon type="inbox" />
-            <span>Option 3</span>
-          </Menu.Item>
           <SubMenu
-            key="sub1"
+            key="common"
             title={(
               <span>
-                <Icon type="mail" />
-                <span>Navigation One</span>
+                <Icon type="desktop" />
+                <i className="title">常用功能</i>
               </span>
             )}
           >
-            <Menu.Item key="5">Option 5</Menu.Item>
-            <Menu.Item key="6">Option 6</Menu.Item>
-            <Menu.Item key="7">Option 7</Menu.Item>
-            <Menu.Item key="8">Option 8</Menu.Item>
+            <Menu.Item key="rich-text"><Link to="rich-text">富文本编辑器</Link></Menu.Item>
+            <Menu.Item key="drag"><Link to="drag">拖曳</Link></Menu.Item>
           </SubMenu>
           <SubMenu
-            key="sub2"
+            key="animation"
             title={(
               <span>
-                <Icon type="appstore" />
-                <span>Navigation Two</span>
+                <Icon type="desktop" />
+                <i className="title">功能</i>
               </span>
             )}
           >
-            <Menu.Item key="9">Option 9</Menu.Item>
-            <Menu.Item key="10">Option 10</Menu.Item>
-            <SubMenu key="sub3" title="Submenu">
-              <Menu.Item key="11">Option 11</Menu.Item>
-              <Menu.Item key="12">Option 12</Menu.Item>
-            </SubMenu>
+            <Menu.Item key="11">Option 11</Menu.Item>
+            <Menu.Item key="12">Option 12</Menu.Item>
+          </SubMenu>
+          <SubMenu
+            key="table"
+            title={(
+              <span>
+                <Icon type="desktop" />
+                <i className="title">功能</i>
+              </span>
+            )}
+          >
+            <Menu.Item key="11">Option 11</Menu.Item>
+            <Menu.Item key="12">Option 12</Menu.Item>
+          </SubMenu>
+          <SubMenu
+            key="form"
+            title={(
+              <span>
+                <Icon type="desktop" />
+                <i className="title">功能</i>
+              </span>
+            )}
+          >
+            <Menu.Item key="11">Option 11</Menu.Item>
+            <Menu.Item key="12">Option 12</Menu.Item>
           </SubMenu>
         </Menu>
         <div
